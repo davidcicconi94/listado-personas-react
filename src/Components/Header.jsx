@@ -5,10 +5,10 @@ const Header = () => {
     <nav className="navbar navbar-dark bg-dark text-white p-3">
       <div className="container-fluid">
         <h1 className="navbar-brand">
-          Agenda de contactos <i class="fa-solid fa-address-card mx-2"></i>
+          Agenda de contactos <i className="fa-solid fa-address-card mx-2"></i>
         </h1>
         <h1 className="navbar-brand">
-          <i class="fa-brands fa-react"></i> React
+          <i className="fa-brands fa-react"></i> React
         </h1>
       </div>
     </nav>

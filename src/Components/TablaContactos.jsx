@@ -1,37 +1,32 @@
 import React from "react";
 
-const TablaContactos = () => {
+const TablaContactos = ({ contactos }) => {
   return (
     <div className="container">
       <div className="row">
         <div className="col-md-6">
-          <table class="table table-dark table-hover">
+          <table className="table table-dark table-hover">
             <thead>
               <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Number</th>
-                <th scope="col">Action</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Number</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
+              {contactos.map((contacto) => {
+                return (
+                  <tr key={contacto.id}>
+                    <th key={contacto.id}> {contacto.id} </th>
+                    <td key={contacto.name}> {contacto.nombre} </td>
+                    <td key={contacto.numero}> {contacto.numero} </td>
+                    <td>
+                      <button className="btn btn-danger">Eliminar</button>
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
