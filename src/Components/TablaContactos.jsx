@@ -1,11 +1,32 @@
 import React from "react";
 
-const TablaContactos = ({ contactos }) => {
+const TablaContactos = ({
+  contactos = [],
+  dispatch,
+  formView,
+  setFormView,
+}) => {
+  const handleDelete = (id) => {
+    const actionDelete = {
+      type: "delete",
+      payload: id,
+    };
+    dispatch(actionDelete);
+  };
+
   return (
     <div className="container">
       <div className="row">
         <div className="col-md-6">
-          <table className="table table-dark table-hover">
+          <button
+            className="btn btn-secondary"
+            onClick={() => {
+              setFormView(!formView);
+            }}
+          >
+            {!formView ? "+ Agregar Contactos" : "- Cerrar Formulario"}
+          </button>
+          <table className="table table-dark table-hover mt-3">
             <thead>
               <tr>
                 <th>ID</th>
@@ -16,13 +37,20 @@ const TablaContactos = ({ contactos }) => {
             </thead>
             <tbody>
               {contactos.map((contacto) => {
+                const shortId = contacto.id.split("-")[0];
+
                 return (
-                  <tr key={contacto.id}>
-                    <th key={contacto.id}> {contacto.id} </th>
+                  <tr key={shortId}>
+                    <th key={shortId}> {shortId} </th>
                     <td key={contacto.name}> {contacto.nombre} </td>
                     <td key={contacto.numero}> {contacto.numero} </td>
                     <td>
-                      <button className="btn btn-danger">Eliminar</button>
+                      <button
+                        onClick={() => handleDelete(contacto.id)}
+                        className="btn btn-danger"
+                      >
+                        Eliminar
+                      </button>
                     </td>
                   </tr>
                 );
