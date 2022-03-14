@@ -3,21 +3,7 @@ import { useReducer } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { ContactosReducer } from "../Reducers/ContactosReducer";
-import FormularioAdd from "./FormularioAdd";
 import TablaContactos from "./TablaContactos";
-
-// const contactos = [
-//   {
-//     id: "1",
-//     nombre: "David",
-//     numero: "152613141",
-//   },
-//   {
-//     id: "2",
-//     nombre: "Estefania",
-//     numero: "153823116",
-//   },
-// ];
 
 const init = () => {
   const contactos = localStorage.getItem("contactos");
@@ -41,7 +27,6 @@ const Contactos = () => {
         contactos={state}
         dispatch={dispatch}
       />
-      {formView && <FormularioAdd dispatch={dispatch} />}
     </div>
   );
 };

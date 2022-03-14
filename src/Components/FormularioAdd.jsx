@@ -22,13 +22,19 @@ const FormularioAdd = ({ dispatch }) => {
   };
 
   const handleAdd = () => {
-    dispatch(actionAdd);
+    if (data.nombre === " " || data.numero === " ") {
+      alert("Vacio");
+      return false;
+    } else {
+      dispatch(actionAdd);
+      return true;
+    }
   };
 
   return (
     <div className="container">
       <div className="row">
-        <div className="col-md-6">
+        <div className="col-md-12">
           <label className="mx-1 d-grid gap-2">
             Nombre:
             <input
@@ -40,7 +46,7 @@ const FormularioAdd = ({ dispatch }) => {
               autoComplete="off"
             />
           </label>
-          <label className="mx-1 d-grid gap-2">
+          <label className="mx-1 d-grid gap-2 mt-3">
             Número:
             <input
               onChange={handleChange}

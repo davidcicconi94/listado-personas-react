@@ -1,4 +1,5 @@
 import React from "react";
+import FormularioAdd from "./FormularioAdd";
 
 const TablaContactos = ({
   contactos = [],
@@ -58,6 +59,9 @@ const TablaContactos = ({
               })}
             </tbody>
           </table>
+        </div>
+        <div className="col-md-6">
+          {formView && <FormularioAdd dispatch={dispatch} />}
         </div>
       </div>
     </div>
