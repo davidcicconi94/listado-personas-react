@@ -27,32 +27,36 @@ const FormularioAdd = ({ dispatch }) => {
 
   return (
     <div className="container">
-      <label className="mx-1 d-grid gap-2">
-        Nombre:
-        <input
-          onChange={handleChange}
-          name="nombre"
-          value={data.nombre}
-          type="text"
-          className="form-control"
-          autoComplete="off"
-        />
-      </label>
-      <label className="mx-1 d-grid gap-2">
-        Número:
-        <input
-          onChange={handleChange}
-          name="numero"
-          type="text"
-          value={data.numero}
-          className="form-control"
-          autoComplete="off"
-        />
-      </label>
-      <div className="mx-1 d-grid gap-2">
-        <button onClick={handleAdd} className="btn btn-info mt-3">
-          Agregar
-        </button>
+      <div className="row">
+        <div className="col-md-6">
+          <label className="mx-1 d-grid gap-2">
+            Nombre:
+            <input
+              onChange={handleChange}
+              name="nombre"
+              value={data.nombre}
+              type="text"
+              className="form-control"
+              autoComplete="off"
+            />
+          </label>
+          <label className="mx-1 d-grid gap-2">
+            Número:
+            <input
+              onChange={handleChange}
+              name="numero"
+              type="text"
+              value={data.numero}
+              className="form-control"
+              autoComplete="off"
+            />
+          </label>
+          <div className="mx-1 d-grid gap-2">
+            <button onClick={handleAdd} className="btn btn-info mt-3">
+              Agregar
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

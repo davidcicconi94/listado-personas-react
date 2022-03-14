@@ -18,6 +18,7 @@ const TablaContactos = ({
     <div className="container">
       <div className="row">
         <div className="col-md-6">
+          {/* button */}
           <button
             className="btn btn-secondary"
             onClick={() => {

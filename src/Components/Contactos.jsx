@@ -35,23 +35,13 @@ const Contactos = () => {
 
   return (
     <div className="cotainer mt-3">
-      {/* <button
-        className="btn btn-secondary"
-        onClick={() => {
-          setFormView(!formView);
-        }}
-      >
-        + Agregar Contacto
-      </button> */}
-
-      {formView && <FormularioAdd dispatch={dispatch} />}
-
       <TablaContactos
         setFormView={setFormView}
         formView={formView}
         contactos={state}
         dispatch={dispatch}
       />
+      {formView && <FormularioAdd dispatch={dispatch} />}
     </div>
   );
 };
