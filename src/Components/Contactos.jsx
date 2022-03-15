@@ -20,7 +20,7 @@ const Contactos = () => {
   const [formView, setFormView] = useState(false);
 
   return (
-    <div className="cotainer mt-3">
+    <div className="cotainer mt-5">
       <TablaContactos
         setFormView={setFormView}
         formView={formView}

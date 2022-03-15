@@ -26,15 +26,15 @@ const TablaContactos = ({
               setFormView(!formView);
             }}
           >
-            {!formView ? "+ Agregar Contactos" : "- Cerrar Formulario"}
+            {!formView ? "+ Agregar Contacto" : "- Cerrar Formulario"}
           </button>
           <table className="table table-dark table-hover mt-3">
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Name</th>
-                <th>Number</th>
-                <th>Action</th>
+                <th>Nombre</th>
+                <th>Número</th>
+                <th>Acción</th>
               </tr>
             </thead>
             <tbody>

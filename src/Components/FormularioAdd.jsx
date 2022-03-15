@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import Swal from "sweetalert2";
 import { v4 as uuid } from "uuid";
 
 const FormularioAdd = ({ dispatch }) => {
@@ -23,10 +24,23 @@ const FormularioAdd = ({ dispatch }) => {
 
   const handleAdd = () => {
     if (data.nombre === " " || data.numero === " ") {
-      alert("Vacio");
+      Swal.fire({
+        icon: "error",
+        title: "Error...",
+        text: "Alguno de los campos no ha sido completado.",
+      });
+
       return false;
     } else {
+      Swal.fire(
+        "¡Contacto Agregado!",
+        `${data.nombre} se agregó a tu agenda.`,
+        "success"
+      );
       dispatch(actionAdd);
+      data.nombre = " ";
+      data.numero = " ";
+
       return true;
     }
   };
@@ -44,6 +58,7 @@ const FormularioAdd = ({ dispatch }) => {
               type="text"
               className="form-control"
               autoComplete="off"
+              autoFocus
             />
           </label>
           <label className="mx-1 d-grid gap-2 mt-3">
