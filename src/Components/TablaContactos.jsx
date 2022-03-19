@@ -15,13 +15,14 @@ const TablaContactos = ({
     };
 
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      title: "¿Eliminar?",
+      text: `¿Deseas eliminar éste contacto de la lista?`,
       icon: "warning",
       showCancelButton: true,
+      cancelButtonText: "Cancelar",
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonText: "Borrar",
     }).then((result) => {
       if (result.isConfirmed) {
         dispatch(actionDelete);
